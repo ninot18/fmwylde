@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    title: string;
+    imageSrc: ImageMetadata;
+    alt: string;
+    description: string;
+    btnSrc: string;
+}
+
+const { title, imageSrc, alt, description, btnSrc } = Astro.props as Props;
+---
+<a 
+    href={btnSrc}
+>
+<Image
+    src={imageSrc}
+    alt={alt}
+    class="w-72 rounded-lg mb-2"
+/>
+</a>
+
+<a
+    class="text-xl text-green-600 underline hover:text-green-900"
+    href={btnSrc}
+>
+    {title}
+</a>
+
+
+<p class="mt-2">
+    {description}
+</p>

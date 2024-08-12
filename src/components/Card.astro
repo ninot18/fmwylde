@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import mage from './images/mago.webp';
+import writer from './images/writer.webp';
+import magic from './images/magic.webp';
+---
+
+<section>
+    <article>
+        <span>
+            <Image
+                src={mage}
+                alt="Icono de un mago"
+                class="w-14 sm:w-16 md:w-20"
+            />
+        </span>
+        <a
+            href="#arkania" 
+            class="text-xl text-green-600 underline hover:text-green-900"
+        >
+            Avances y lore
+        </a>
+        <p  class="mt-2"
+        >
+            Estado de las novelas y artículos para ampliar tu información sobre los mundos.
+        </p>
+    </article>
+
+    <article>
+        <span>
+            <Image
+                src={writer}
+                alt="Icono de una pluma"
+                class="w-14 sm:w-16 md:w-20"
+            />
+        </span>
+        <a
+            href="#blog" 
+            class="text-xl text-green-600 underline hover:text-green-900"
+        >
+            Blog
+        </a>
+        <p class="mt-2">Mi blog personal donde comparto mis reflexiones.</p>
+    </article>
+
+    <article>
+        <span>
+            <Image
+                src={magic}
+                alt="Icono de libro del que brota magia"
+                class="w-14 sm:w-16 md:w-20"
+            />
+        </span>
+        <a
+            href="#reviews" 
+            class="text-xl text-green-600 underline hover:text-green-900"
+        >
+            Reseñas
+        </a>
+        <p  class="mt-2">Crítica de diversas obras que te pueden interesar, principalmente de fantasía.</p>
+    </article>
+
+</section>
+
+<style>
+    section {
+        display: flex;
+        gap: 5px;
+    }
+
+    section article {
+        flex: 1;
+        padding: 6px;
+    }
+
+
+</style>

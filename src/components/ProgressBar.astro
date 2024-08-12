@@ -1,0 +1,35 @@
+---
+import Counter from '../components/Counter';
+---
+
+<div class="mb-1 text-lg font-medium dark:text-white">Progreso Arkania (Primer Borrador)</div>
+<div class="w-full h-6 bg-gray-200 rounded-full dark:bg-gray-700 progress-container">
+  <div class="h-6 rounded-full text-center progress-bar">
+    <Counter target={87} client:load />
+  </div>
+</div>
+
+
+<style>
+  .progress-container {
+      background-color: #e0e0e0;
+      overflow: hidden;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .progress-bar {
+      background: linear-gradient(to right, rgb(184, 254, 206), rgba(105, 192, 115, 1));
+      border-radius: 25px 0 0 25px;
+      animation: fill 6s forwards;
+  }
+
+  @keyframes fill {
+      0% {
+          width: 0;
+      }
+      100% {
+          width: 87%;
+      }
+  }
+</style>
+

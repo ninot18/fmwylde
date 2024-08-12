@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import fmwylde from './images/fmwylde.webp';
+---
+
+<section>
+    <article>
+        <h1 class="text-4xl text-green-600 font-bold mb-8">
+            ¿Quién es F.M.Wylde?
+        </h1>
+        <p>
+            Si estás interesado en conocerme mejor y saber por qué escribo, este es el espacio adecuado.
+        </p>
+        <br>
+        <p>
+            Desde niño he sido una fanático de la fantasía, los superhéroes y la ciencia ficción. La escritura era algo que siempre me había apasionado y desde los 16 años una idea se plantó en mi mente: Escribir la novela de fantasía épica que me encantaría leer. Eso es Arkania
+        </p>
+        <div class="text-center p-2 mt-10"> 
+            <button
+                id="btn-arkania"
+                class=  "w-40 h-12 sm:w-56 sm:h-16 
+                        bg-green-500 text-green-800 rounded-full 
+                        text-base sm:text-2xl 
+                        transition-transform transform hover:scale-105 
+                        hover:bg-green-900 hover:text-black hover:shadow-lg"
+            >
+                Saber más
+            </button>
+        </div>
+    </article>
+    <article>
+        <Image
+            src={fmwylde}
+            alt="Foto de F. M. Wylde"
+            class="imgWylde w-96"
+        />
+    </article>
+
+</section>
+
+<style>
+    section {
+        display: flex;
+        align-items: center;
+    }
+    .imgWylde {
+        mask-image: linear-gradient(black 95%, transparent)
+    }
+
+    section article {
+        flex: 1;
+    }
+
+    @media (max-width: 640px) {
+        section {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+</style>

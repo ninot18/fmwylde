@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import mago from '../components/images/mago1.webp';
+import batman from '../components/images/batman.webp';
+import aventura from '../components/images/aventuras.webp';
+---
+
+<section>
+    <h1 class="text-4xl text-green-600 font-bold mb-8">
+        ¿Por qué deberías leerme?
+    </h1>
+    <section class="flex flex-col md:flex-row gap-10 justify-center">
+        <article>
+            <Image
+                src={mago}
+                alt="Icono de un mago" 
+                class="w-20 mb-1"
+            />
+            <h1 class="text-xl text-green-500 mb-1">¿Te gusta la magia?</h1>
+            <p>Arkania está llena de magia. Con sus reglas, normas y sistemas. Estoy seguro de que si eres fan de la fantasía, te encantará.</p>
+        </article>
+        <article>
+            <Image
+                src={batman}
+                alt="Icono de Batman" 
+                class="w-20 mb-1"
+            />
+            <h1  class="text-xl text-green-500 mb-1">¿Te gustan los superhéroes?</h1>
+            <p>¿Te imaginas un mundo medieval plagado de superhéroes? Es una de las premisas de Arkania. Mola bastante ¿No?</p>
+        </article>
+        <article>
+            <Image
+                src={aventura}
+                alt="Icono de un escudo y una espada" 
+                class="w-20 mb-1"
+            />
+            <h1  class="text-xl text-green-500 mb-1">¿Te gusta la aventura?</h1>
+            <p>Piratas, dragones que hablan con la mente, soldados legendarios y un mundo en guerra ¿Qué más se puede pedir? Zombies, claro, pero eso me lo reservo para la próxima novela.</p>
+        </article>
+    </section>
+</section>
+
+<style>
+    article {
+        flex: 1;
+    }
+</style>

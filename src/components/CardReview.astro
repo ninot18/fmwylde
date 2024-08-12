@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    headImage: ImageMetadata;
+    alt: string;
+    review: string;
+    author: string;
+}
+
+const { headImage, alt, review, author } = Astro.props as Props
+---
+
+<section class="p-1">
+    <article class="flex justify-center">
+        <Image
+            src={headImage}
+            alt={alt}
+            class="w-16"
+        />
+    </article>
+    <p class="text-xl mt-1">
+        {review}
+    </p>
+    <p class="text-xl font-bold mt-2">
+        {author}
+    </p>
+</section>

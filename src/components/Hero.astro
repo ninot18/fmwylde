@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import fmwyldeImage from './images/hero.webp';
+---
+<section class="bgGradient rounded-3xl p-4">
+    <article>
+        <div>
+            <h1 class="text-2xl sm:text-xl md:text-5xl font-bold mt-4">Bienvenido a un mundo de fantasía épica</h1> 
+        </div>
+        <div class="text-center p-2 mt-10"> 
+            <button
+                id="btn-arkania"
+                class=  "w-40 h-12 sm:w-56 sm:h-16 
+                        bg-black text-green-800 rounded-full 
+                        text-base sm:text-2xl 
+                        transition-transform transform hover:scale-105 
+                        hover:bg-green-500 hover:shadow-lg"
+            >
+                Descubre Arkania
+            </button>
+        </div>
+        
+    </article>
+    
+    <article>
+        <Image
+            src={fmwyldeImage}
+            alt="Logo de la web"
+            class="w-850 sm:w-1000 md:w-1000"
+        />
+    </article>
+</section>
+
+<style>
+
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .bgGradient {
+        background: linear-gradient(to right, rgba(34, 55, 7, 1), rgba(105, 192, 115, 1));
+    }
+</style>

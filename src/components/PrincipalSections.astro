@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import ContentSection from './ContentSection.astro';
+import arkania from './images/arkania.webp';
+import blog from './images/blog.webp';
+import reviews from './images/reviews.webp';
+---
+<section>
+    <h1 class="text-4xl text-green-600 font-bold mb-8">
+        Secciones principales
+    </h1>
+</section>
+<section>
+    <article>
+        <ContentSection
+        title="Descubre el mundo de Arkania"
+        imageSrc={arkania}
+        alt="Imagen de una ciudad de Arkania"
+        description="El mundo de Elessar, sus razas, su historia… y su magia. Descubre el universo tras la historia de Arkania"
+        btnSrc='arkania'
+        />
+    </article>
+    <article>
+        <ContentSection
+        title="Échale un vistazo al Blog"
+        imageSrc={blog}
+        alt="Imagen de un personaje fantástico escribiendo"
+        description="Aquí verás que escribo un poco de todo, sobre el proceso y la creación del libro ¡No te lo pierdas!"
+        btnSrc='arkania'
+        />
+    </article>
+    <article>
+        <ContentSection
+        title="Lee mis reseñas de otras obras"
+        imageSrc={reviews}
+        alt="Imagen de un libro rodeado por velas y dragones"
+        description="Suelo leer +50 libros al año (y trato de reseñarlos todos) Puedes buscar el que te interese"
+        btnSrc='arkania'
+        />
+    </article>
+</section>
+
+
+<style>
+    section {
+        display: flex;
+        gap: 10px;
+    }
+
+    section article {
+        flex: 1;
+        padding: 2px;
+    }
+</style>
+
+

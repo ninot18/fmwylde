@@ -1,0 +1,46 @@
+---
+import Card from "../components/Card.astro";
+import FinalSection from "../components/FinalSection.astro";
+import Hero from "../components/Hero.astro";
+import MainCharacterSection from "../components/MainCharacterSection.astro";
+import PrincipalSections from "../components/PrincipalSections.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import Review from "../components/Review.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+
+---
+
+<MainLayout
+	title="Inicio - F. M. Wylde"
+	author="Pedro Rojas"
+	description="Blog del escritor F. M. Wylde"
+	version="1.0"
+>
+	<main class="px-4">
+		<SectionContainer class="py-16 md:py-20">
+			<Hero />
+		</SectionContainer>
+		<SectionContainer class="py-16 md:py-20">
+			<ProgressBar />
+		</SectionContainer>
+		<SectionContainer class="py-16 md:py-20">
+			<Card />
+		</SectionContainer>
+		<SectionContainer class="py-16 md:py-20">
+			<PrincipalSections />
+		</SectionContainer>
+		<SectionContainer class="py-16 md:py-20">
+			<MainCharacterSection />
+		</SectionContainer>
+		<section class="bg-green-200 dark:bg-green-800 rounded-lg mb-2">
+			<SectionContainer class="py-16 md:py-20">
+				<Review />
+			</SectionContainer>
+		</section>
+		<SectionContainer>
+			<FinalSection />
+		</SectionContainer>
+	</main>
+</MainLayout>
