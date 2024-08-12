@@ -34,7 +34,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 		<SectionContainer class="py-16 md:py-20">
 			<MainCharacterSection />
 		</SectionContainer>
-		<section class="bg-green-200 dark:bg-green-800 rounded-lg mb-2">
+		<section class="bg-green-200 dark:bg-green-800 mb-2 element">
 			<SectionContainer class="py-16 md:py-20">
 				<Review />
 			</SectionContainer>
@@ -44,3 +44,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 		</SectionContainer>
 	</main>
 </MainLayout>
+
+<style>
+	.element{
+		margin-left: -20px;
+		margin-right: -16px;
+		z-index: -1;
+	}
+</style>

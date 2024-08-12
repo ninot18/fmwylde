@@ -1,0 +1,18 @@
+---
+import AboutMe from "../components/AboutMe.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+	title="Sobre F. M. Wylde"
+	author="Pedro Rojas"
+	description="Sobre el escritor F. M. Wylde"
+	version="1.0"
+>
+	<main class="px-4">
+        <SectionContainer class="py-16 md:py-20">
+			<AboutMe />
+		</SectionContainer>
+	</main>
+</MainLayout>
