@@ -2,14 +2,14 @@
 interface Props {
     title: string;
     description?: string;
-    imgUrl: string;
+    className: string;
 }
 
-const { title, description, imgUrl } = Astro.props;
+const { title, description, className } = Astro.props;
 ---
 
 <section class="p-4">
-    <article class="parent" style={`background-image: url('${imgUrl}')`}>
+    <article class={`parent ${className}`}>
         <h1 class="text-4xl text-green-500 font-bold">{title}</h1>
     </article>
     <h2 class="mt-2">
@@ -42,5 +42,11 @@ const { title, description, imgUrl } = Astro.props;
     h1{
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.816);
         text-align: center;
+    }
+    .background1 {
+        background-image: url('../components/images/aguazul.webp');
+    }
+    .background2 {
+        background-image: url('../components/images/arkaniaworld.webp');
     }
 </style>
