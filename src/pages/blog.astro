@@ -1,11 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import BlogHeader from "../components/BlogHeader.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import TypedBlogPost from '../components/TypedBlogPost.astro';
 
-const blogPosts = await getCollection('blog');
 ---
 
 <MainLayout
@@ -18,13 +15,8 @@ const blogPosts = await getCollection('blog');
         <BlogHeader />
     </SectionContainer>
 
-    <SectionContainer>
-        <section class="grid grid-cols-1 gap-8 m-4 md:m-0 md:grid-cols-2">
-			{
-				blogPosts.map( (post: any) => <TypedBlogPost post = {post} />)
-			}
-
-        </section>
+    <SectionContainer class="py-16 md:py-20">
+        <h1 class="p-4">Aquí van los posts del blog -- //TODO</h1>
     </SectionContainer>
 
 </MainLayout>
