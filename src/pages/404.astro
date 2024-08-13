@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import SectionContainer from "../components/SectionContainer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import sadbatman from '../components/images/sadbatman.webp';
+---
+
+<MainLayout
+    title="Página no encontrada"
+	author="Pedro Rojas"
+	description="Página de redirección tras un error 404 - Page not found"
+	version="1.0"
+>
+    <SectionContainer class="py-16 md:py-20">
+        <h1 class="text-4xl text-green-600 font-bold mb-2 mt-2 flex justify-center">
+            ¡Vaya!
+        </h1>
+        <p class="mb-2 text-xl text-green-600 flex justify-center">
+            (O como dicen los entendidos: Ups, error 404)
+        </p>
+        <article class="flex justify-center">
+            <Image
+                src={sadbatman}
+                alt="Imagen del cartoon de Batman llorando"
+                class="rounded-md"
+            />
+        </article>
+        <h2 class="text-2xl font-bold mb-8 mt-2 flex justify-center">
+            Entre leer libros, ser influencer y convertirme en el mejor autor de fantasía épica (según buenas fuentes), parece ser que olvidé hacer esta página.
+        </h2>
+        <p class="text-xl italic mb-8 mt-2 flex justify-center">
+            Aunque también es posible que simplemente te hayas equivocado al navegar...
+        </p>
+    </SectionContainer>
+</MainLayout>
