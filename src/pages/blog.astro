@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import BlogHeader from "../components/BlogHeader.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import TypedBlogPost from '../components/TypedBlogPost.astro';
+
+const blogPosts = await getCollection('blog');
+---
+
+<MainLayout
+    title="Taberna Aguazul - F. M. Wylde"
+    author="Pedro Rojas"
+    description="Blog del escritor F. M. Wylde"
+    version="1.0"
+>
+    <SectionContainer class="py-16 md:py-20">
+        <BlogHeader />
+    </SectionContainer>
+
+    <SectionContainer>
+        <section class="grid grid-cols-1 gap-8 m-4 md:m-0 md:grid-cols-2">
+			{
+				blogPosts.map( (post: any) => <TypedBlogPost post = {post} />)
+			}
+
+        </section>
+    </SectionContainer>
+
+</MainLayout>

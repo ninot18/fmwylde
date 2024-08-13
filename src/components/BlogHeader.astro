@@ -1,0 +1,41 @@
+---
+
+---
+
+<section class="p-4">
+    <article class="parent">
+        <h1 class="text-4xl text-green-500 font-bold">Bienvenido a la taberna de Aguazul</h1>
+    </article>
+    <h2 class="mt-2">
+        También conocido como «El Blog». En esta sección podrás leer mis pensamientos semanales más recientes. ¡Espero que te resulten interesantes y enriquecedores!
+    </h2>
+</section>
+
+<style>
+    .parent {
+        position: relative;
+        background-image: url('../components/images/aguazul.webp');
+        background-position: center;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .parent::before {
+        content: "";
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(244, 177, 178, 0.27);
+        z-index: 0;
+    }
+
+    h1{
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.816);
+        text-align: center;
+    }
+</style>
