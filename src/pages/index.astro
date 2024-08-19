@@ -45,10 +45,21 @@ import MainLayout from "../layouts/MainLayout.astro";
 	</main>
 </MainLayout>
 
-<style>
+<style is:global>
 	.element{
 		margin-left: -20px;
 		margin-right: -16px;
 		z-index: -1;
+	}
+	/* Cambia el color del texto seleccionado */
+	::selection {
+		background-color: #0ee93a; /* Color de fondo del texto seleccionado */
+		color: #000000; /* Color del texto seleccionado */
+	}
+
+	/* Para navegadores webkit como Chrome, Safari */
+	::-webkit-selection {
+		background-color: #0ee93a;
+		color: #000000;
 	}
 </style>

@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content"
+import { getPosts } from "../../utils/post";
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+
+
+const posts = await getCollection('blog');
+
+export async function getStaticPaths()  {
+    const posts = await getPosts();
+    return posts.map((post) => ({
+        params: { slug: post.slug},
+        props: post
+    }));
+};
+
+type Props = CollectionEntry<'blog'>;
+---
+
+<MainLayout
+    title="Blog - F. M. Wylde"
+    author="Pedro Rojas"
+    description="Blog del escritor F. M. Wylde"
+    version="1.0"
+>
+    <div class="py-16 md:py-20 flex justify-center">Añadir el contenido del post -- //TODO</div>
+</MainLayout>

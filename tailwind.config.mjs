@@ -9,7 +9,11 @@ export default {
 				'850': '850px',
 				'700': '700px',
 				'500': '500px',
-			  },
+			},
+			gridTemplateColumns: {
+				list: 'repeat(auto-fill, minmax(400px, max-content))'
+			}
+			  
 		},
 	},
 	plugins: [],
