@@ -1,0 +1,36 @@
+---
+
+import BlogHeader from '../../../components/BlogHeader.astro';
+import ListCategories from '../../../components/ListCategories.astro';
+import ListPosts from '../../../components/ListPosts.astro';
+import SectionContainer from '../../../components/SectionContainer.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getTags, getPostByTag } from '../../../utils/post.ts';
+
+export async function getStaticPaths() {
+	const tags = await getTags()
+
+	return tags.map((tag: any) => ({
+		params: { tag },
+		props: { tag }
+	}))
+}
+
+const { tag } = Astro.props
+
+const posts = await getPostByTag(tag)
+---
+
+<MainLayout 
+    title={tag}
+    author="Pedro Rojas"
+    description="Reseñas del escritor F. M. Wylde"
+    version="1.0"
+>
+	<SectionContainer class="py-16 md:py-20">
+		<BlogHeader />
+	</SectionContainer>
+	<SectionContainer class="py-2 md:py-6 px-3">
+		<ListPosts posts={posts} FirstBig={true} />
+	</SectionContainer>
+</MainLayout>
