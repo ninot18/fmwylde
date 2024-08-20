@@ -44,6 +44,8 @@ const { title, author, description, version } = Astro.props;
     <style is:global>
       :root {
         color-scheme: light dark;
+        scrollbar-color: rgba(0, 128, 0, 0.732) rgba(2, 1, 80, 0.296);
+        scrollbar-width: thin;
       }
 
       html {
@@ -64,7 +66,6 @@ const { title, author, description, version } = Astro.props;
           scroll-behavior: auto;
         }
       }
-
       @media (prefers-color-scheme: dark) {
         body {
           color: rgba(255, 255, 255, 0.9);
