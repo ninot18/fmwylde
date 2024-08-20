@@ -1,0 +1,34 @@
+---
+import BlogHeader from "../components/BlogHeader.astro";
+import ListCategories from "../components/ListCategories.astro";
+import ListPosts from "../components/ListPosts.astro";
+import ReviewHeader from "../components/ReviewHeader.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+import { getPosts } from "../utils/post";
+const MAX_POSTS = 5;
+const posts = await getPosts(MAX_POSTS);
+---
+
+<MainLayout
+    title="Reseñas - F. M. Wylde"
+    author="Pedro Rojas"
+    description="Reseñas del escritor F. M. Wylde"
+    version="1.0"
+>
+    <SectionContainer class="py-16 md:py-20">
+        <ReviewHeader />
+    </SectionContainer>
+
+    <SectionContainer class="py-2 md:py-6 px-3">
+        Añadir las reviews -- //TODO
+        <!-- <ListCategories />
+
+        <section>
+            <h2>Últimos Posts</h2>
+            <ListPosts FirstBig={true} posts={posts} />
+        </section> -->
+    </SectionContainer>
+
+</MainLayout>

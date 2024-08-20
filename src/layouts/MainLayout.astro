@@ -22,9 +22,10 @@ const { title, author, description, version } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
     <title>{title}</title>
-	<meta name="author" content={author} />
-	<meta name="description" content={description} />
-	<meta name="version" content={version} />
+    <meta name="author" content={author} />
+    <meta name="description" content={description} />
+    <meta name="version" content={version} />
+    <meta name="view-transition" content="same-origin" />
     <ViewTransitions />
   </head>
 

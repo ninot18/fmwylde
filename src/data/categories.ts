@@ -1,8 +1,10 @@
 // List of categories for blog posts
 export const CATEGORIES = [
-	'Category 1',
-	'Category 2',
-	'Category 3',
-	'Category 4',
-	'Category 5'
-] as const
+	'Estoicismo',
+] as const;
+
+export const CATEGORIES_ARCHIVE = [
+	'Las Razas de Elessar',
+	'Sinopsis de Arkania',
+	'Los Protagonistas de Arkania'
+] as const; 
