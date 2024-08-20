@@ -11,7 +11,7 @@ type TableOfContent = {
 }
 
 const toc = buildToc(headings)
-function buildToc(headings: TableOfContent[]) {
+function buildToc(headings: TableOfContent[]): TableOfContent[] {
 	let toc: TableOfContent[] = []
 	let parentHeadings = new Map()
 	headings.forEach((h) => {
