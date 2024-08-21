@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 export interface Props {
   id: string
   title: string
-  img: string
+  img: ImageMetadata
 }
 
 const {
@@ -22,3 +22,10 @@ const {
     style={`view-transition-name: book-${id}`}
   />
 </a>
+
+<Image
+    class='aspect-[389/500] h-full object-cover w-full max-w-full rounded'
+    src={img}
+    alt={`Portada del libro ${title}`}
+    style={`view-transition-name: book-${id}`}
+  />
