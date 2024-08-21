@@ -1,9 +1,11 @@
 ---
 import BlogHeader from "../components/BlogHeader.astro";
 import ListCategories from "../components/ListCategories.astro";
+import ListOfBooks from "../components/ListOfBooks.astro";
 import ListPosts from "../components/ListPosts.astro";
 import ReviewHeader from "../components/ReviewHeader.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Title from "../components/Title.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 
 import { getPosts } from "../utils/post";
@@ -22,14 +24,8 @@ const posts = await getPosts(MAX_POSTS);
     </SectionContainer>
 
     <SectionContainer class="py-2 md:py-6 px-3">
-        Añadir las reviews -- //TODO
-        <section class="h-96"></section>
-        <!-- <ListCategories />
-
-        <section>
-            <h2>Últimos Posts</h2>
-            <ListPosts FirstBig={true} posts={posts} />
-        </section> -->
+        <Title />
+        <ListOfBooks />
     </SectionContainer>
 
 </MainLayout>

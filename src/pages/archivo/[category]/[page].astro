@@ -1,0 +1,52 @@
+---
+
+import ListPosts from '../../../components/ListPosts.astro';
+import ListArchiveCategories from '../../../components/ListArchiveCategories.astro';
+import { sluglify, unsluglify } from '../../../utils/sluglify.ts';
+import { getArchiveCategories, getArchivePosts } from '../../../utils/post.ts';
+import { siteConfig } from '../../../data/site.config.ts';
+import Pagination from '../../../components/Pagination.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import SectionContainer from '../../../components/SectionContainer.astro';
+import BlogHeader from '../../../components/BlogHeader.astro';
+
+export async function getStaticPaths({ paginate }: any) {
+	const categories = await getArchiveCategories()
+	const allPosts = await getArchivePosts()
+
+	return categories.flatMap((category: string) => {
+		const unsluglifyNameCategory = unsluglify(category!.toLowerCase())
+		const filteredPosts = allPosts.filter(
+			(post) => post.data.category.toLowerCase() === unsluglifyNameCategory
+		)
+
+		return paginate(filteredPosts, {
+			params: {
+				category: sluglify(category.toLowerCase())
+			},
+			pageSize: siteConfig.paginationSize
+		})
+	})
+}
+const params = Astro.params
+const { page } = Astro.props
+
+const unsluglifyNameCategory = unsluglify(params.category!.toLowerCase())
+const posts = page.data
+---
+
+<MainLayout 
+    title={params.category}
+    author="Pedro Rojas"
+    description="Reseñas del escritor F. M. Wylde"
+    version="1.0"
+>
+	<SectionContainer class="py-16 md:py-20">
+		<BlogHeader />
+	</SectionContainer>
+	<SectionContainer class="py-2 md:py-6 px-3">
+		<ListArchiveCategories activeCategory={params.category} />
+		<ListPosts posts={posts} FirstBig={true} type="post" />
+		<Pagination page={page} />
+	</SectionContainer>
+</MainLayout>

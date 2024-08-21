@@ -65,7 +65,7 @@ const { Content, headings } = await post.render();
                 <!-- related posts -->
                 <footer>
                     <h2 class='font-bold text-lg dark:text-white mb-6'>Post Relacionados</h2>
-                    <ListRelatedPosts posts={relatedPosts} />
+                    <ListRelatedPosts posts={relatedPosts} route="archive" />
                 </footer>
             </article>
         </div>
