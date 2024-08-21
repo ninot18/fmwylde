@@ -1,0 +1,17 @@
+---
+import { getArchiveCategories } from '../utils/post';
+import Category from "./Category.astro";
+const categories = await getArchiveCategories();
+
+const { activeCategory } = Astro.props;
+---
+
+<section class="mb-5 flex gap-5">
+    <Category />
+    {
+        categories.map((category: string) => (
+            <Category name={category} activeCategory={activeCategory} />
+        ))
+    }
+    </div>
+</section>

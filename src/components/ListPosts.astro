@@ -4,11 +4,12 @@ import PostCard from '../components/PostCard.astro';
 import { cn } from '../utils/cn';
 
 type Props = {
-    posts: CollectionEntry<'blog'>[]
+    posts: CollectionEntry<'blog' | 'archive'>[]
     FirstBig?: boolean
+	type: string
 }
 
-const { posts, FirstBig = false } = Astro.props;
+const { posts, FirstBig = false, type } = Astro.props;
 ---
 
 <section
@@ -25,6 +26,7 @@ const { posts, FirstBig = false } = Astro.props;
 					id={post.id}
 					data={post.data}
 					slug={post.slug}
+					type={type}
 				/>
 			)
 		})

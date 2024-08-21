@@ -1,7 +1,7 @@
 ---
 // import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content"
-import { getPosts } from "../../utils/post";
+import { getArchivePosts } from "../../utils/post";
 import type { CollectionEntry } from "astro:content";
 import SectionContainer from "../../components/SectionContainer.astro";
 import Share from "../../components/Share.astro";
@@ -13,17 +13,17 @@ import BlogPost from "../../layouts/BlogPost.astro";
 
 
 
-const posts = await getCollection('blog');
+const posts = await getCollection('archive');
 
 export async function getStaticPaths()  {
-    const posts = await getPosts();
+    const posts = await getArchivePosts();
     return posts.map((post) => ({
         params: { slug: post.slug},
         props: post
     }));
 };
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<'archive'>;
 
 const post = Astro.props;
 const MAX_POST = 3;

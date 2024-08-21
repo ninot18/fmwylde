@@ -117,6 +117,17 @@ const { title, author, description, version } = Astro.props;
           }
         }
       }
+      /* Cambia el color del texto seleccionado */
+      ::selection {
+        background-color: #0ee93a; /* Color de fondo del texto seleccionado */
+        color: #000000; /* Color del texto seleccionado */
+      }
+
+      /* Para navegadores webkit como Chrome, Safari */
+      ::-webkit-selection {
+        background-color: #0ee93a;
+        color: #000000;
+      }
     </style>
   </body>
 </html>

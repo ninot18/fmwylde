@@ -2,7 +2,12 @@
 import SectionContainer from "../components/SectionContainer.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import PagesHeader from "../components/PagesHeader.astro";
+import ListArchiveCategories from "../components/ListArchiveCategories.astro";
+import ListPosts from "../components/ListPosts.astro";
 
+import { getArchivePosts } from "../utils/post";
+const MAX_POSTS = 5;
+const posts = await getArchivePosts(MAX_POSTS);
 ---
 
 <MainLayout
@@ -19,9 +24,13 @@ import PagesHeader from "../components/PagesHeader.astro";
         />
     </SectionContainer>
 
-    <SectionContainer class="py-16 md:py-20">
-        <h1>Aquí van las entradas del archivo de Arkania -- //TODO</h1>
-        <section class="h-96"></section>
+    <SectionContainer class="py-2 md:py-6">
+        <ListArchiveCategories  />
+
+        <section>
+            <h2>Últimos Posts</h2>
+            <ListPosts FirstBig={true} posts={posts} type="archive" />
+        </section>
     </SectionContainer>
 
 </MainLayout>
