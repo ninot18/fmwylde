@@ -1,11 +1,19 @@
 ---
 import Counter from '../components/Counter';
+
+export interface Props {
+  textBar: string;
+  percentatge: number;
+}
+
+
+const { percentatge, textBar } = Astro.props;
 ---
 
-<div class="mb-1 text-lg font-medium dark:text-white">Progreso Arkania (Primer Borrador)</div>
+<div class="mb-2 mt-2 text-lg font-medium dark:text-white">Progreso {textBar}</div>
 <div class="w-full h-6 bg-gray-200 rounded-full dark:bg-gray-700 progress-container">
-  <div class="h-6 rounded-full text-center progress-bar">
-    <Counter target={87} client:load />
+  <div class="mb-2 h-6 rounded-full text-center progress-bar" style={`--w-size: ${percentatge}%`}>
+    <Counter target={percentatge} client:load />
   </div>
 </div>
 
@@ -28,7 +36,7 @@ import Counter from '../components/Counter';
           width: 0;
       }
       100% {
-          width: 87%;
+          width: var(--w-size);
       }
   }
 </style>
