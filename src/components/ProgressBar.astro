@@ -10,7 +10,7 @@ export interface Props {
 const { percentatge, textBar } = Astro.props;
 ---
 
-<div class="mb-2 mt-2 text-lg font-medium dark:text-white">Progreso {textBar}</div>
+<div class="mb-2 mt-2 text-lg font-medium dark:text-white">{textBar}</div>
 <div class="w-full h-6 bg-gray-200 rounded-full dark:bg-gray-700 progress-container">
   <div class="mb-2 h-6 rounded-full text-center progress-bar" style={`--w-size: ${percentatge}%`}>
     <Counter target={percentatge} client:load />
